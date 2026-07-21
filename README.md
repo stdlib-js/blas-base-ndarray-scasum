@@ -46,7 +46,7 @@ The [_L1_ norm][l1norm] is defined as
 ```
 
 <!-- <div class="equation" align="center" data-raw-text="\|\mathbf{x}\|_1 = \sum_{i=0}^{n-1} \vert x_i \vert" data-equation="eq:l1norm">
-    <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@c403cb0cbb15d9b7b453e3cea34ca2379500ddd4/lib/node_modules/@stdlib/blas/base/scasum/docs/img/equation_l1norm.svg" alt="L1 norm definition.">
+    <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@0b6a176fdab165a791a284bc2b08c69a95eb62f2/lib/node_modules/@stdlib/blas/base/ndarray/scasum/docs/img/equation_l1norm.svg" alt="L1 norm definition.">
     <br>
 </div> -->
 
@@ -56,38 +56,32 @@ The [_L1_ norm][l1norm] is defined as
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-base-ndarray-scasum
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-scasum = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-ndarray-scasum@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var scasum = require( 'path/to/vendor/umd/blas-base-ndarray-scasum/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-ndarray-scasum@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.scasum;
-})();
-</script>
+var scasum = require( '@stdlib/blas-base-ndarray-scasum' );
 ```
 
 #### scasum( arrays )
@@ -123,16 +117,11 @@ The function has the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-complex64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-ndarray-scasum@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var Complex64Vector = require( '@stdlib/ndarray-vector-complex64' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var scasum = require( '@stdlib/blas-base-ndarray-scasum' );
 
 var opts = {
     'dtype': 'float32'
@@ -143,11 +132,6 @@ console.log( ndarray2array( x ) );
 
 var out = scasum( [ x ] );
 console.log( out );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
