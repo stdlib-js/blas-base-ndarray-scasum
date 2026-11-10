@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,28 +16,35 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { complex64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* BLAS level 1 routine to compute the sum of absolute values for all elements in a one-dimensional single-precision complex floating-point ndarray.
+* Computes the sum of absolute values for all elements in a one-dimensional single-precision complex floating-point ndarray.
 *
-* @module @stdlib/blas-base-ndarray-scasum
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns sum
 *
 * @example
 * var Complex64Vector = require( '@stdlib/ndarray-vector-complex64' );
-* var scasum = require( '@stdlib/blas-base-ndarray-scasum' );
 *
 * var x = new Complex64Vector( [ 1.0, -2.0, 3.0, -4.0 ] );
 *
 * var y = scasum( [ x ] );
 * // returns 10.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function scasum( arrays: [ complex64ndarray ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = scasum;
